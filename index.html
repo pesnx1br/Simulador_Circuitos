@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bancada Elétrica 3D</title>
+<link rel="stylesheet" href="css/style.css">
+</head><body>
+<div id="app">
+<div id="bar"><b>Bancada Elétrica 3D</b>
+<button id="bRun">Iniciar</button><button id="bPause">Pausar</button><button id="bRst">Reiniciar</button><button id="bStop">Interromper</button>
+<button id="bHome">Início</button><button id="bView">Ver em 3D</button>
+<label>Passo <input id="dt" value="50µs" size="6"></label>
+<button id="bSave">Salvar</button><button id="bLoad">Carregar</button><button id="bDel" style="border-color:var(--rd);color:var(--rd)">Remover item</button><button id="bRot">Girar 90°</button><button id="bFlip">Inverter polaridade</button><button id="bDup">Duplicar</button><button id="bExp">Exportar/Importar</button><button id="bClr">Limpar</button>
+<span id="tm" class="k"></span></div>
+<div id="main"><aside id="lib"></aside>
+<div id="cv"><canvas id="c2"></canvas><canvas id="c3"></canvas><div id="tip"></div><div id="hint">Arraste da biblioteca · clique em um terminal e depois em outro para ligar · R gira · Del ou botão Remover item apaga a peça · clique direito na peça também · num terminal remove os fios · duplo clique alterna chave</div></div>
+<aside id="side"><h4>Propriedades</h4><div id="props"></div><h4>Osciloscópio (V ciano, I âmbar)</h4><canvas id="sc" style="position:static;width:100%;height:90px;background:#0c1319;border-radius:5px"></canvas><h4>Cálculos em tempo real</h4><table id="tb"></table></aside></div>
+<div id="warn"></div></div>
+<div id="home"><div><h1>Bancada Elétrica 3D</h1><p>Escolha como trabalhar. Os dois modos usam o mesmo motor de cálculo, os mesmos componentes e as mesmas visualizações 2D e 3D.</p><button id="hM">Montar Circuito</button><button id="hC" class="on">Calcular Circuito</button></div></div>
+<dialog id="calc"><h3 style="margin-top:0">Calcular Circuito</h3>
+<div class="row"><label>Ligação dos componentes</label><select id="topo"><option value="s">Todos em série (fonte primeiro)</option><option value="p">Todos em paralelo</option><option value="c">Personalizada: misto, malhas, ramificações</option></select></div>
+<div class="row"><label>Tempo de simulação (s)</label><input id="tsim" value="0.2"></div>
+<div class="row"><select id="ct"></select><button id="cAdd">Adicionar componente</button></div>
+<div id="cr"></div><div id="cerr" class="e"></div>
+<p style="color:var(--mu);font-size:11px">Na ligação personalizada informe o nó de cada terminal (nó 0 = terra; A é o terminal +). Nós iguais ficam ligados entre si.</p>
+<div style="display:flex;gap:8px;flex-wrap:wrap"><button id="cGo" class="on">Calcular e Simular</button><button id="cTest">Testes automáticos</button><button id="cX">Fechar</button></div></dialog>
+<dialog id="rep"><div id="rb"></div><button id="rX" style="margin-top:10px">Ver circuito</button></dialog>
+<dialog id="dlg"><textarea id="ta"></textarea><div style="display:flex;gap:8px;margin-top:8px"><button id="dOk">Importar este texto</button><button id="dCl">Fechar</button></div></dialog>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="js/core.js"></script>
+<script src="js/engine.js"></script>
+<script src="js/editor2d.js"></script>
+<script src="js/view3d.js"></script>
+<script src="js/anim.js"></script>
+<script src="js/calc-mode.js"></script>
+<script src="js/main.js"></script>
+</body></html>
