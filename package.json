@@ -1,0 +1,7 @@
+{
+  "name": "simulador-circuitos",
+  "version": "1.0.0",
+  "description": "Bancada elétrica 3D: simulador de circuitos com editor 2D, visualização 3D e modo de cálculo automático.",
+  "scripts": { "test": "node tests/engine.test.js", "start": "python3 -m http.server 8000" },
+  "license": "MIT"
+}
